@@ -9,7 +9,7 @@
 <body>
 <h1>Weronika Rogalska</h1>
     <?php
-    require_once('conect.php');
+    require_once('connect.php');
     
     $sql = "SELECT * FROM ksiazki";
     $result = $conn -> query($sql);
