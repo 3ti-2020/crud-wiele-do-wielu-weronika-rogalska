@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='style5.css'>
+    <link rel='stylesheet' href='style2.css'>
     <title>CRUD - wiele do wielu</title>
 </head>
 <body>
-<h1>Weronika Rogalska</h1>
+<header class="header"><h1>Weronika Rogalska</h1></header>
+<main class="main">
     <?php
     require_once('connect.php');
     
@@ -19,6 +20,7 @@
     }
 
     ?>
+</main>
 </body>
 <script src="main.js"></script>
 </html>
