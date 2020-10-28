@@ -8,13 +8,39 @@
 </head>
 <body>
 <header class="header"><h1>Weronika Rogalska</h1></header>
-<sidebar class="sidebar">s</sidebar>
+<sidebar class="sidebar">
+    <form action='insert.php' method='POST'>
+        <br>Autor:
+        <input type='text' name='name'>
+        <br>Tytuł:
+        <input type='text' name='tytul'>
+        <br><input type='submit' value='wyslij'>
+    </form>
+</sidebar>
 <main class="main">
     <?php
     require_once('connect.php');
     
-    $sql = "SELECT * FROM ksiazki";
+    $sql = "SELECT * FROM lib_tytul";
     $result = $conn -> query($sql);
+
+    echo("<table class='tab'>");
+    echo("<tr>
+    <th>id</th>
+    <th>tytul</th>
+    </tr>");
+
+    echo("<br>");
+    while($row = $result->fetch_assoc()){
+        echo("<tr>");
+        echo("<td>".$row['id_tytul']."</td>
+        <td>".$row['tytul']."</td>");
+        echo("</tr>");
+    }
+    echo("</table>");
+
+    $sql2 = "SELECT * FROM lib_autor";
+    $result = $conn -> query($sql2);
 
     echo("<table class='tab'>");
     echo("<tr>
@@ -25,13 +51,14 @@
     echo("<br>");
     while($row = $result->fetch_assoc()){
         echo("<tr>");
-        echo("<td>".$row['id_autor_tytul']."</td>
+        echo("<td>".$row['id_autor']."</td>
         <td>".$row['name']."</td>");
         echo("</tr>");
     }
+    echo("</table>");
 
     ?>
 </main>
 </body>
-<script src="main.js"></script>
+<!-- <script src="main.js"></script> -->
 </html>
