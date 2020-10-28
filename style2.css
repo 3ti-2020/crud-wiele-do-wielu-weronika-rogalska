@@ -12,6 +12,11 @@ body{
 
 .main{
     background-color: palevioletred;
-    grid-column: 1/4;
+    grid-column: 2/4;
     padding: 2rem;
+}
+
+.sidebar{
+    background-color: palevioletred;
+    grid-column: 1 / 2;
 }
