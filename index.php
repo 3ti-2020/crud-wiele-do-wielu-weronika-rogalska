@@ -15,8 +15,16 @@
     $sql = "SELECT * FROM ksiazki";
     $result = $conn -> query($sql);
 
+    echo("<table class='tab'>");
+    echo("<tr>
+    <th>autor</th>
+    </tr>");
+
+    echo("<br>");
     while($row = $result->fetch_assoc()){
-        echo("id: ".$row['name']." <br>");
+        echo("<tr>");
+        echo("<td>".$row['name']."</td>");
+        echo("</tr>");
     }
 
     ?>
