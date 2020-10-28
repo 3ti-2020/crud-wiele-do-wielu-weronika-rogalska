@@ -8,7 +8,6 @@
 </head>
 <body>
 <header class="header"><h1>Weronika Rogalska</h1></header>
-<sidebar class="sidebar">s</sidebar>
 <main class="main">
     <?php
     require_once('connect.php');
