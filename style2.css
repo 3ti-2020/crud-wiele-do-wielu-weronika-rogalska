@@ -1,18 +1,28 @@
 body{
     display: grid;
-    grid-template: auto auto/ auto auto;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+    'a a'
+    'b c';
     grid-gap: 2px;
 }
 
 .header{
     background-color: lightskyblue;
-    grid-column: 1/4;
+    grid-area: a;
+    padding: 2rem;
+}
+
+.sidebar{
+    background-color: palevioletred;
+    grid-area: b;
     padding: 2rem;
 }
 
 .main{
     background-color: palevioletred;
-    grid-column: 1 / 4;
+    grid-area: c;
     padding: 2rem;
 }
 

@@ -8,6 +8,7 @@
 </head>
 <body>
 <header class="header"><h1>Weronika Rogalska</h1></header>
+<sidebar class="sidebar">s</sidebar>
 <main class="main">
     <?php
     require_once('connect.php');
@@ -17,13 +18,15 @@
 
     echo("<table class='tab'>");
     echo("<tr>
+    <th>id</th>
     <th>autor</th>
     </tr>");
 
     echo("<br>");
     while($row = $result->fetch_assoc()){
         echo("<tr>");
-        echo("<td>".$row['name']."</td>");
+        echo("<td>".$row['id_autor_tytul']."</td>
+        <td>".$row['name']."</td>");
         echo("</tr>");
     }
 
