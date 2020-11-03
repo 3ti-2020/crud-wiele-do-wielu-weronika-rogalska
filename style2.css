@@ -1,6 +1,6 @@
 body{
     display: grid;
-    grid-template-columns: auto 2fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 4fr;
     grid-template-areas: 
     'a a'
@@ -39,16 +39,6 @@ a{
     grid-area: b;
     padding: 2rem;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.sidebar2{
-    background-color: #e8e8e8;
-    grid-area: b;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
 }
 

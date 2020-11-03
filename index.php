@@ -25,13 +25,11 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </div>
 </header>
 <sidebar class="sidebar">
-    <form action='#' method='POST'>
-        <br>Autor:
-        <input type='text' name='name'>
-        <br>Tytuł:
-        <input type='text' name='tytul'>
-        <br><input class='btn' type='submit' value='DODAJ'>
-    </form>
+    <h2>MENU</h2>
+    <ul>
+    <li><a href='index.php'>index</a>
+    <li><a href='index2.php'>index2</a>
+    </ul>
 </sidebar>
 <main class="main">
     <?php
@@ -84,13 +82,11 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </div>
 </header>
 <sidebar class="sidebar">
-    <form action='#' method='POST'>
-        <br>Autor:
-        <input type='text' name='name'>
-        <br>Tytuł:
-        <input type='text' name='tytul'>
-        <br><input class='btn' type='submit' value='DODAJ'>
-    </form>
+    <h2>MENU</h2>
+    <ul>
+    <li><a href='index.php'>index</a>
+    <li><a href='index2.php'>index2</a>
+    </ul>
 </sidebar>
 <main class="main">
     <?php
