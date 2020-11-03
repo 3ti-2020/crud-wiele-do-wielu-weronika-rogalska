@@ -20,6 +20,31 @@
 <main class="main">
     <?php
     require_once('connect.php');
+
+    $sql = "SELECT * FROM ksiazki";
+    $result = $conn -> query($sql);
+
+    echo("<table class='tab'>");
+    echo("<tr>
+    <th>id</th>
+    <th>autor</th>
+    <th>tytul</th>
+    <th>delete</th> 
+    </tr>");
+
+    echo("<br>");
+    while($row = $result->fetch_assoc()){
+        echo("<tr>");
+        echo("<td>".$row['id_autor_tytul']."</td>
+        <td>".$row['name']."</td>
+        <td>".$row['tytul']."</td>
+        <td><form action='delete.php' method='POST'>
+        <input style='display: none' value=".$row['id_autor_tytul']." name='id_autor_tytul'>
+        <input class='del' type='submit' value='X'>
+        </form></td>");
+        echo("</tr>");
+    }
+    echo("</table>");
     
     $sql = "SELECT * FROM lib_tytul";
     $result = $conn -> query($sql);
@@ -57,7 +82,9 @@
     }
     echo("</table>");
 
+    $conn->close();
     ?>
+
 </main>
 </body>
 <!-- <script src="main.js"></script> -->

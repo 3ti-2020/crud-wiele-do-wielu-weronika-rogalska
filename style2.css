@@ -1,7 +1,7 @@
 body{
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 
     'a a'
     'b c';
@@ -12,6 +12,8 @@ body{
     background-color: lightskyblue;
     grid-area: a;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 .sidebar{
@@ -24,10 +26,18 @@ body{
     background-color: palevioletred;
     grid-area: c;
     padding: 2rem;
+    
 }
 
 .tab, th, td, tr{
     border: solid 1px black;
     border-collapse: collapse;
     padding: 5px;
+}
+
+.del{
+    background-color: red;
+    border-radius: 17px;
+    height: 30px;
+    width: 30px;
 }
