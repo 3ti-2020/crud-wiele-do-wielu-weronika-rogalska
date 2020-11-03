@@ -100,14 +100,13 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 
 </main>
 </body>
-<!-- <script src="main.js"></script> -->
 </html>
 <?php
-    // echo"<br>zalogowano";
-    // echo"<div class='container'>tu nic nie ma</div>";
-    // echo"<br>";
 }else{
-    echo"<br>NIE zalogowano";
+    echo("<div style='text-align: center;'>");
+    echo"<div style=' padding: 1rem'>NIE zalogowano</div>";
+    echo"<div><a style='text-decoration:none; color: black; padding: 1rem' href='index.php'>-->POWRÓT<--</a></div>";
+    echo("</div>");
 }
 
 ?>
