@@ -103,9 +103,13 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </html>
 <?php
 }else{
-    echo("<div style='text-align: center;'>");
-    echo"<div style=' padding: 1rem'>NIE zalogowano</div>";
-    echo"<div><a style='text-decoration:none; color: black; padding: 1rem' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
+    echo("<div style='text-align: center;
+    background-color: #e8e8e8;
+    padding: 5rem;
+    height: 100%'>");
+    echo"<div style='padding: 2rem;'>NIE zalogowano</div>";
+    echo"<div><a style='text-decoration:none;
+    color: black' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
     echo("</div>");
 }
 
