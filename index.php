@@ -75,6 +75,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </head>
 <body>
 <header class="header">
+    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
 <div class="menu">
 <a href="logowanie.php">ZALOGUJ </a>
