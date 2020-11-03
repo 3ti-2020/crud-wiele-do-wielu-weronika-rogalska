@@ -53,7 +53,8 @@ a{
     background-color: #e8e8e8;
     grid-area: c;
     padding: 2rem;
-    
+    display: flex;
+    justify-content: center;
 }
 
 .tab, th, td, tr{
