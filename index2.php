@@ -6,7 +6,7 @@ if(isset($_POST['pass']) && $_POST['pass'] == 'a'){
 }
 
 if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
-    ?>
+?>
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +18,10 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 <body>
 <header class="header">
 <div class="imie"><h1>Weronika Rogalska</h1></div>
-<div class="menu"><a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a></div>
+<div class="menu">
+    <a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a>
+    <a href="card/card.html"> KARTA</a>
+</div>
 </header>
 <sidebar class="sidebar">
     <form action='insert.php' method='POST'>
@@ -59,42 +62,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     }
     echo("</table>");
     
-    // $sql = "SELECT * FROM lib_tytul";
-    // $result = $conn -> query($sql);
-
-    // echo("<table class='tab'>");
-    // echo("<tr>
-    // <th>id</th>
-    // <th>tytul</th>
-    // </tr>");
-
-    // echo("<br>");
-    // while($row = $result->fetch_assoc()){
-    //     echo("<tr>");
-    //     echo("<td>".$row['id_tytul']."</td>
-    //     <td>".$row['tytul']."</td>");
-    //     echo("</tr>");
-    // }
-    // echo("</table>");
-
-    // $sql2 = "SELECT * FROM lib_autor";
-    // $result = $conn -> query($sql2);
-
-    // echo("<table class='tab'>");
-    // echo("<tr>
-    // <th>id</th>
-    // <th>autor</th>
-    // </tr>");
-
-    // echo("<br>");
-    // while($row = $result->fetch_assoc()){
-    //     echo("<tr>");
-    //     echo("<td>".$row['id_autor']."</td>
-    //     <td>".$row['name']."</td>");
-    //     echo("</tr>");
-    // }
-    // echo("</table>");
-
     $conn->close();
     ?>
 

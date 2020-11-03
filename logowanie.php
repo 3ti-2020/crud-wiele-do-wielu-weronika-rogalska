@@ -17,7 +17,7 @@
 <h3>MENU</h3>
 <ul>
 <li><a href='index.php'>index</a>
-<li><a href='plik2.php'>plik2</a>
+<li><a href='index2.php'>index2</a>
 </ul>
 </sidebar>
 <main class="main">
@@ -31,8 +31,9 @@ if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj'){
 if(!isset($_SESSION['zalogowany'])){
 ?>
 <form action='index2.php' method='POST'>
-    <input type='text' placeholder='login' name='login' placehold='login'>
-    <input type='password' placeholder='password' name='pass' placehold='pass'>
+    <input type='text' placeholder='login' name='login'>
+    <input type='password' placeholder='password' name='pass'>
+    hasło: a
     <input class='btn' type='submit' value='zaloguj'>
 </form>
 <?php
