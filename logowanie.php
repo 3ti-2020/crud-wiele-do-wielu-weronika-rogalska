@@ -13,8 +13,8 @@
 <div class="menu"><a href="index.php">POWRÓT</a></div>
 </header>
 
-<sidebar class="sidebar2">
-<h3>MENU</h3>
+<sidebar class="sidebar">
+<h2>MENU</h2>
 <ul>
 <li><a href='index.php'>index</a>
 <li><a href='index2.php'>index2</a>
