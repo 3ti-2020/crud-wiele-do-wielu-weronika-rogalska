@@ -1,7 +1,7 @@
 body{
     display: grid;
     grid-template-columns: auto 2fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 4fr;
     grid-template-areas: 
     'a a'
     'b c';
@@ -86,3 +86,4 @@ input[type=password] {
     margin: 8px 0;
     background-color: grey;
 }
+

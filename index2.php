@@ -59,41 +59,41 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     }
     echo("</table>");
     
-    $sql = "SELECT * FROM lib_tytul";
-    $result = $conn -> query($sql);
+    // $sql = "SELECT * FROM lib_tytul";
+    // $result = $conn -> query($sql);
 
-    echo("<table class='tab'>");
-    echo("<tr>
-    <th>id</th>
-    <th>tytul</th>
-    </tr>");
+    // echo("<table class='tab'>");
+    // echo("<tr>
+    // <th>id</th>
+    // <th>tytul</th>
+    // </tr>");
 
-    echo("<br>");
-    while($row = $result->fetch_assoc()){
-        echo("<tr>");
-        echo("<td>".$row['id_tytul']."</td>
-        <td>".$row['tytul']."</td>");
-        echo("</tr>");
-    }
-    echo("</table>");
+    // echo("<br>");
+    // while($row = $result->fetch_assoc()){
+    //     echo("<tr>");
+    //     echo("<td>".$row['id_tytul']."</td>
+    //     <td>".$row['tytul']."</td>");
+    //     echo("</tr>");
+    // }
+    // echo("</table>");
 
-    $sql2 = "SELECT * FROM lib_autor";
-    $result = $conn -> query($sql2);
+    // $sql2 = "SELECT * FROM lib_autor";
+    // $result = $conn -> query($sql2);
 
-    echo("<table class='tab'>");
-    echo("<tr>
-    <th>id</th>
-    <th>autor</th>
-    </tr>");
+    // echo("<table class='tab'>");
+    // echo("<tr>
+    // <th>id</th>
+    // <th>autor</th>
+    // </tr>");
 
-    echo("<br>");
-    while($row = $result->fetch_assoc()){
-        echo("<tr>");
-        echo("<td>".$row['id_autor']."</td>
-        <td>".$row['name']."</td>");
-        echo("</tr>");
-    }
-    echo("</table>");
+    // echo("<br>");
+    // while($row = $result->fetch_assoc()){
+    //     echo("<tr>");
+    //     echo("<td>".$row['id_autor']."</td>
+    //     <td>".$row['name']."</td>");
+    //     echo("</tr>");
+    // }
+    // echo("</table>");
 
     $conn->close();
     ?>
