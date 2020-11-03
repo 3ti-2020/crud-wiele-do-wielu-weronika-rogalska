@@ -1,29 +1,56 @@
 body{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: auto 2fr;
     grid-template-rows: auto auto;
     grid-template-areas: 
     'a a'
     'b c';
     grid-gap: 2px;
+    color: #495464;
 }
 
 .header{
-    background-color: lightskyblue;
+    background-color: #bbbfca;
     grid-area: a;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.imie{
+    width: 100%;
+    text-align: center;
+}
+
+.menu{
+    width: 100%;
+    text-align: end;
+}
+
+a{
+    text-decoration: none;
+    color: #495464;
+}
+
+.sidebar{
+    background-color: #e8e8e8;
+    grid-area: b;
     padding: 2rem;
     display: flex;
     justify-content: center;
 }
 
-.sidebar{
-    background-color: palevioletred;
+.sidebar2{
+    background-color: #e8e8e8;
     grid-area: b;
     padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .main{
-    background-color: palevioletred;
+    background-color: #e8e8e8;
     grid-area: c;
     padding: 2rem;
     
@@ -36,8 +63,26 @@ body{
 }
 
 .del{
-    background-color: red;
+    background-color: #990033;
     border-radius: 17px;
     height: 30px;
     width: 30px;
+}
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: transparent;
+}
+
+input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: transparent;
+}
+
+.btn{
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: grey;
 }

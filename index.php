@@ -7,14 +7,17 @@
     <title>Weronika Rogalska gr2</title>
 </head>
 <body>
-<header class="header"><h1>Weronika Rogalska</h1></header>
+<header class="header">
+<div class="imie"><h1>Weronika Rogalska</h1></div>
+<div class="menu"><a href="logowanie.php" class="logowanie">ZALOGUJ</a></div>
+</header>
 <sidebar class="sidebar">
     <form action='insert.php' method='POST'>
         <br>Autor:
         <input type='text' name='name'>
         <br>Tytuł:
         <input type='text' name='tytul'>
-        <br><input type='submit' value='wyslij'>
+        <br><input class='btn' type='submit' value='DODAJ'>
     </form>
 </sidebar>
 <main class="main">
