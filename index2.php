@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if(isset($_POST['pass']) && $_POST['pass'] == 'a'){
+    $_SESSION['zalogowany'] = 1;
+}
+
+if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
+    ?>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,10 +18,10 @@
 <body>
 <header class="header">
 <div class="imie"><h1>Weronika Rogalska</h1></div>
-<div class="menu"><a href="logowanie.php" class="logowanie">ZALOGUJ</a></div>
+<div class="menu"><a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a></div>
 </header>
 <sidebar class="sidebar">
-    <form action='#' method='POST'>
+    <form action='insert.php' method='POST'>
         <br>Autor:
         <input type='text' name='name'>
         <br>Tytuł:
@@ -20,6 +29,7 @@
         <br><input class='btn' type='submit' value='DODAJ'>
     </form>
 </sidebar>
+
 <main class="main">
     <?php
     require_once('connect.php');
@@ -32,6 +42,7 @@
     <th>id</th>
     <th>autor</th>
     <th>tytul</th>
+    <th>delete</th> 
     </tr>");
 
     echo("<br>");
@@ -39,7 +50,11 @@
         echo("<tr>");
         echo("<td>".$row['id_autor_tytul']."</td>
         <td>".$row['name']."</td>
-        <td>".$row['tytul']."</td>");
+        <td>".$row['tytul']."</td>
+        <td><form action='delete.php' method='POST'>
+        <input style='display: none' value=".$row['id_autor_tytul']." name='id_autor_tytul'>
+        <input class='del' type='submit' value='X'>
+        </form></td>");
         echo("</tr>");
     }
     echo("</table>");
@@ -87,3 +102,12 @@
 </body>
 <!-- <script src="main.js"></script> -->
 </html>
+<?php
+    // echo"<br>zalogowano";
+    // echo"<div class='container'>tu nic nie ma</div>";
+    // echo"<br>";
+}else{
+    echo"<br>NIE zalogowano";
+}
+
+?>

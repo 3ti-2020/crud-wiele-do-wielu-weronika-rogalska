@@ -5,6 +5,6 @@ $del = "DELETE from lib_autor_tytul where id_autor_tytul=".$_POST['id_autor_tytu
 
 mysqli_query($conn, $del);
 
-header('Location: index.php');
+header('Location: index2.php');
 
 ?>

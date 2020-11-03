@@ -31,6 +31,6 @@ if ($conn->query($sql3) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-header('Location: index.php');
+header('Location: index2.php');
 
 ?>
