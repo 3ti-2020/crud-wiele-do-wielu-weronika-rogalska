@@ -20,8 +20,8 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
 <div class="menu">
-    <a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a>
-    <a href="card/card.html"> KARTA</a>
+    <div><a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a></div>
+    <div><a href="card/card.html"> KARTA</a></div>
 </div>
 </header>
 <sidebar class="sidebar">
@@ -77,8 +77,8 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
 <div class="menu">
-<a href="logowanie.php">ZALOGUJ </a>
-<a href="card/card.html"> KARTA</a>
+    <div><a href="logowanie.php">ZALOGUJ</a></div>
+    <div><a href="card/card.html">KARTA</a></div>
 </div>
 </header>
 <sidebar class="sidebar">

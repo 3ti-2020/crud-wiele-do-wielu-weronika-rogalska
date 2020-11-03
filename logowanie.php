@@ -10,7 +10,7 @@
 
 <header class="header">
 <div class="imie"><h1>Weronika Rogalska</h1></div>
-<div class="menu"><a href="index.php">POWRÓT</a></div>
+<div class="menu"><div><a href="index.php">POWRÓT</a></div></div>
 </header>
 
 <sidebar class="sidebar">
