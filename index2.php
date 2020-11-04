@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+if(!empty($_POST['login'])){
+    if($_POST['login'] == 'a'){
+
 if(isset($_POST['pass']) && $_POST['pass'] == 'a'){
     $_SESSION['zalogowany'] = 1;
 }
@@ -17,8 +20,9 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </head>
 <body>
 <header class="header">
-    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
+    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/142_Github_logo_logos-512.png" height='30px' width='30px'></a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
+<div class="imie"><h3>zalogowano admin</h3></div>
 <div class="menu">
     <div><a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a></div>
     <div><a href="card/card.html"> KARTA</a></div>
@@ -70,6 +74,17 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </body>
 </html>
 <?php
+}else{
+    echo("<div style='text-align: center;
+    background-color: #e8e8e8;
+    padding: 5rem;
+    height: 100%'>");
+    echo"<div style='padding: 2rem;'>NIE zalogowano</div>";
+    echo"<div><a style='text-decoration:none;
+    color: black' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
+    echo("</div>");
+}
+}
 }else{
     echo("<div style='text-align: center;
     background-color: #e8e8e8;

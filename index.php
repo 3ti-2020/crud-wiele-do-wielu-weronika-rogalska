@@ -17,18 +17,17 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </head>
 <body>
 <header class="header">
-    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
+    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB<img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/142_Github_logo_logos-512.png" height='30px' width='30px'></a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
 <div class="menu">
     <div><a href='logowanie.php?akcja=wyloguj'>WYLOGUJ</a></div>
-    <div><a href="card/card.html"> KARTA</a></div>
 </div>
 </header>
 <sidebar class="sidebar">
     <h2>MENU</h2>
     <ul>
-    <li><a href='index.php'>index</a>
-    <li><a href='index2.php'>index2</a>
+    <li><a href="card/card.html"> KARTA</a>
+    <li><a href='index.php'>index2</a>
     </ul>
 </sidebar>
 <main class="main">
@@ -74,18 +73,17 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </head>
 <body>
 <header class="header">
-    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB</a></div>
+    <div><a href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB<img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/142_Github_logo_logos-512.png" height='30px' width='30px'></a></div>
 <div class="imie"><h1>Weronika Rogalska</h1></div>
 <div class="menu">
     <div><a href="logowanie.php">ZALOGUJ</a></div>
-    <div><a href="card/card.html">KARTA</a></div>
 </div>
 </header>
 <sidebar class="sidebar">
     <h2>MENU</h2>
     <ul>
-    <li><a href='index.php'>index</a>
-    <li><a href='index2.php'>index2</a>
+    <li><a href="card/card.html"> KARTA</a>
+    <li><a href='index.php'>index2</a>
     </ul>
 </sidebar>
 <main class="main">

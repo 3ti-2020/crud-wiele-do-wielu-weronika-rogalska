@@ -16,7 +16,7 @@
 <sidebar class="sidebar">
 <h2>MENU</h2>
 <ul>
-<li><a href='index.php'>index</a>
+<li><a href="card/card.html"> KARTA</a>
 <li><a href='index2.php'>index2</a>
 </ul>
 </sidebar>
