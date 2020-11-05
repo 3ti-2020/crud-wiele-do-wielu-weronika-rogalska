@@ -30,10 +30,10 @@ if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj'){
 };
 if(!isset($_SESSION['zalogowany'])){
 ?>
+<div>login:a hasło: a</div>
 <form action='index2.php' method='POST'>
     <input type='text' placeholder='login' name='login'>
     <input type='password' placeholder='password' name='pass'>
-    hasło: a
     <input class='btn' type='submit' value='zaloguj'>
 </form>
 <?php
