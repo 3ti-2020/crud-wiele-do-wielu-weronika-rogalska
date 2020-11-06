@@ -1,14 +1,10 @@
 <?php
 session_start();
 
-if(!empty($_POST['login'])){
-    if($_POST['login'] == 'a'){
-
-if(isset($_POST['pass']) && $_POST['pass'] == 'a'){
+if((isset($_POST['pass'])) && (isset($_POST['login'])) && $_POST['login']=='a' && $_POST['pass'] == 'a'){
     $_SESSION['zalogowany'] = 1;
 }
-
-if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
+    if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +43,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 
     echo("<table class='tab'>");
     echo("<tr>
-    <th>id</th>
     <th>autor</th>
     <th>tytul</th>
     <th>delete</th> 
@@ -56,8 +51,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     echo("<br>");
     while($row = $result->fetch_assoc()){
         echo("<tr>");
-        echo("<td>".$row['id_autor_tytul']."</td>
-        <td>".$row['name']."</td>
+        echo("<td>".$row['name']."</td>
         <td>".$row['tytul']."</td>
         <td><form action='delete.php' method='POST'>
         <input style='display: none' value=".$row['id_autor_tytul']." name='id_autor_tytul'>
@@ -75,25 +69,14 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 </html>
 <?php
 }else{
-    echo("<div style='text-align: center;
-    background-color: #e8e8e8;
-    padding: 5rem;
-    height: 100%'>");
-    echo"<div style='padding: 2rem;'>NIE zalogowano</div>";
-    echo"<div><a style='text-decoration:none;
-    color: black' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
-    echo("</div>");
-}
-}
-}else{
-    echo("<div style='text-align: center;
-    background-color: #e8e8e8;
-    padding: 5rem;
-    height: 100%'>");
-    echo"<div style='padding: 2rem;'>NIE zalogowano</div>";
-    echo"<div><a style='text-decoration:none;
-    color: black' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
-    echo("</div>");
+echo("<div style='text-align: center;
+background-color: #e8e8e8;
+padding: 5rem;
+height: 100%'>");
+echo"<div style='padding: 2rem;'>NIE zalogowano</div>";
+echo"<div><a style='text-decoration:none;
+color: black' href='logowanie.php'>-->ZALOGUJ<--</a></div>";
+echo("</div>");
 }
 
 ?>
