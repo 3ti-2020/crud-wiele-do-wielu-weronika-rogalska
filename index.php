@@ -39,7 +39,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 
     echo("<table class='tab'>");
     echo("<tr>
-    <th>id</th>
     <th>autor</th>
     <th>tytul</th>
     </tr>");
@@ -47,8 +46,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     echo("<br>");
     while($row = $result->fetch_assoc()){
         echo("<tr>");
-        echo("<td>".$row['id_autor_tytul']."</td>
-        <td>".$row['name']."</td>
+        echo("<td>".$row['name']."</td>
         <td>".$row['tytul']."</td>");
         echo("</tr>");
     }
@@ -95,7 +93,6 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 
     echo("<table class='tab'>");
     echo("<tr>
-    <th>id</th>
     <th>autor</th>
     <th>tytul</th>
     </tr>");
@@ -103,8 +100,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     echo("<br>");
     while($row = $result->fetch_assoc()){
         echo("<tr>");
-        echo("<td>".$row['id_autor_tytul']."</td>
-        <td>".$row['name']."</td>
+        echo("<td>".$row['name']."</td>
         <td>".$row['tytul']."</td>");
         echo("</tr>");
     }
