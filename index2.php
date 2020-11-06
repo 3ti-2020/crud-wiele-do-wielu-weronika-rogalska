@@ -4,7 +4,8 @@ session_start();
 if((isset($_POST['pass'])) && (isset($_POST['login'])) && $_POST['login']=='a' && $_POST['pass'] == 'a'){
     $_SESSION['zalogowany'] = 1;
 }
-    if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
+
+if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
 ?>
     <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +26,8 @@ if((isset($_POST['pass'])) && (isset($_POST['login'])) && $_POST['login']=='a' &
 </div>
 </header>
 <sidebar class="sidebar">
-    <form action='insert.php' method='POST'>
-        <br>Autor:
-        <input type='text' name='name'>
-        <br>Tytuł:
-        <input type='text' name='tytul'>
-        <br><input class='btn' type='submit' value='DODAJ'>
-    </form>
+    <li class="sidebar_a"><a class="btn_dat" href="#">Dodaj autora i książkę</a></li>
+    <li class="sidebar_a"><a class="btn_du" href="#">Dodaj użytkownika</a></li>
 </sidebar>
 
 <main class="main">
@@ -53,10 +49,28 @@ if((isset($_POST['pass'])) && (isset($_POST['login'])) && $_POST['login']=='a' &
         echo("<tr>");
         echo("<td>".$row['name']."</td>
         <td>".$row['tytul']."</td>
-        <td><form action='delete.php' method='POST'>
+        <td class='td_del' ><form action='delete.php' method='POST'>
         <input style='display: none' value=".$row['id_autor_tytul']." name='id_autor_tytul'>
         <input class='del' type='submit' value='X'>
         </form></td>");
+        echo("</tr>");
+    }
+    echo("</table>");
+
+    $sql = "SELECT * from lib_user";
+    $result = $conn -> query($sql);
+
+    echo("<table class='tab'>");
+    echo("<tr>
+    <th>login</th>
+    <th>hasło</th>
+    </tr>");
+
+    echo("<br>");
+    while($row = $result->fetch_assoc()){
+        echo("<tr>");
+        echo("<td>".$row['login']."</td>
+        <td>".$row['password']."</td>");
         echo("</tr>");
     }
     echo("</table>");
@@ -65,6 +79,50 @@ if((isset($_POST['pass'])) && (isset($_POST['login'])) && $_POST['login']=='a' &
     ?>
 
 </main>
+
+
+
+<div class="user_container">
+    <div class="user_content">
+
+    <div class="user_close"><b>+</b></div>
+
+    <div><h1>Dodaj użytkownika</h1></div>
+
+    <div class="input_user">
+        <form action="">
+            <input class="user" type="text" placeholder="login">
+            <input class="user" type="text"placeholder="password">
+            <input class="btn" type="submit" value="DODAJ">
+        </form>
+    </div>
+
+    </div>
+</div>
+
+
+
+<div class="book_container">
+    <div class="book_content">
+
+    <div class="book_close"><b>+</b></div>
+
+    <div><h1>Dodaj autora i książkę</h1></div>
+
+    <div class="input_book">
+    <form action='insert.php' method='POST'>
+        <input class='book' type='text' name='name' placeholder='autor'>
+        <input class='book' type='text' name='tytul' placeholder='tytuł'>
+        <br><input class='btn' type='submit' value='DODAJ'>
+    </form>
+    </div>
+
+    </div>
+</div>
+
+
+
+<script src="main.js"></script>
 </body>
 </html>
 <?php

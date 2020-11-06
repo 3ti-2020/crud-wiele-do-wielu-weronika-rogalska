@@ -1,7 +1,7 @@
 body{
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3.5fr;
     grid-template-areas: 
     'a a'
     'b c';
@@ -58,6 +58,10 @@ a{
     padding: 5px;
 }
 
+.td_del{
+    text-align: center;
+}
+
 .del{
     background-color: #990033;
     border-radius: 17px;
@@ -83,4 +87,96 @@ input[type=password] {
     margin: 8px 0;
     cursor: pointer;
     background-color: grey;
+    border-radius: 4px;
+}
+
+.user_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.user_content{
+    width: 500px;
+    height: 300px;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.user{
+    width: 300px;
+    display: block;
+}
+
+.input_user{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.user_close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 35px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+
+
+
+
+.book_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.book_content{
+    width: 500px;
+    height: 300px;
+    background-color: #e8e8e8;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.book{
+    width: 300px;
+    display: block;
+}
+
+.input_book{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.book_close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 35px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.sidebar_a{
+    font-size: 18px;
+    margin: 10px;
 }
