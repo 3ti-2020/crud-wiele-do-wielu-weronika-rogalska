@@ -145,9 +145,13 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <div><h1>Dodaj użytkownika</h1></div>
 
     <div class="input_user">
-        <form action="">
-            <input class="user" type="text" placeholder="login">
-            <input class="user" type="text"placeholder="password">
+        <form action="user.php" method='POST'>
+            <input class="user" type="text" name='login' placeholder="login">
+            <input class="user" type="text" name='password' placeholder="password">
+            <select name='admin'>
+                <option value='1'>admin</option>
+                <option value='0'>zwykły</option>
+            </select>
             <input class="btn" type="submit" value="DODAJ">
         </form>
     </div>
