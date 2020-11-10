@@ -56,6 +56,7 @@ a{
     border: solid 1px black;
     border-collapse: collapse;
     padding: 5px;
+    margin: 20px;
 }
 
 .td_del{
@@ -75,8 +76,19 @@ input[type=text] {
     margin: 8px 0;
     background-color: transparent;
 }
+input[type=date] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: transparent;
+}
 
 input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: transparent;
+}
+
+select {
     padding: 12px 20px;
     margin: 8px 0;
     background-color: transparent;

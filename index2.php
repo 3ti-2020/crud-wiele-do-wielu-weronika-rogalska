@@ -40,8 +40,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     echo("<table class='tab'>");
     echo("<tr>
     <th>autor</th>
-    <th>tytul</th>
-    <th>delete</th> 
+    <th>tytul</th> 
     </tr>");
 
     echo("<br>");
@@ -49,13 +48,69 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
         echo("<tr>");
         echo("<td>".$row['name']."</td>
         <td>".$row['tytul']."</td>
+
         <td class='td_del' ><form action='delete.php' method='POST'>
         <input style='display: none' value=".$row['id_autor_tytul']." name='id_autor_tytul'>
         <input class='del' type='submit' value='X'>
         </form></td>");
         echo("</tr>");
     }
+    ?>
+    
+
+    <?php
     echo("</table>");
+
+    ?>
+    <div>
+    <form action="wyp.php" method="POST">
+        <p>Książka:</p>
+        <?php
+            $result = $conn -> query("SELECT id_autor_tytul, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id_autor=lib_autor_tytul.id_autor");
+            echo("<select name='tytul'>");
+            while($row = $result->fetch_assoc()){
+                echo("<option name='tytul' value=".$row['id_autor_tytul'].">".$row['tytul']."</option>");
+            }
+            echo("</select>");
+        ?>
+        <p>Użytkownik:</p> 
+        <?php
+            $result = $conn->query("SELECT id, login FROM lib_user");
+            echo("<select name='login'>");
+            while($row = $result -> fetch_assoc()){
+                echo("<option value='".$row['id']."' name='login'>".$row['login']."</option>");
+            }
+            echo("</select>");
+            ?>
+            <input type="date" name='date_odd'>
+            <input class='btn' type="submit" value="dodaj">
+        </form>
+        </div>
+    <?php
+
+
+    $sql = "SELECT * from wypozyczenia";
+    $result = $conn -> query($sql);
+
+    echo("<table class='tab'>");
+    echo("<tr>
+    <th>login</th>
+    <th>tytul</th>
+    <th>wypożyczenie</th>
+    <th>oddanie</th>
+    </tr>");
+
+    echo("<br>");
+    while($row = $result->fetch_assoc()){
+        echo("<tr>");
+        echo("<td>".$row['login']."</td>
+        <td>".$row['tytul']."</td>
+        <td>".$row['date_wyp']."</td>
+        <td>".$row['date_odd']."</td>");
+        echo("</tr>");
+    }
+    echo("</table>");
+
 
     $sql = "SELECT * from lib_user";
     $result = $conn -> query($sql);
