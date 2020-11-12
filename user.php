@@ -5,7 +5,7 @@ $login = $_POST['login'];
 $password = $_POST['password'];
 $admin = $_POST['admin'];
 
-$sql = "INSERT INTO lib_user VALUES (null, '$login', '$password', '$admin')";
+$sql = "INSERT INTO lib_user VALUES (null, '$login', '$password', $admin)";
 
 mysqli_query($conn, $sql);
 
