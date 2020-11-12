@@ -34,7 +34,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <?php
     require_once('connect.php');
 
-    $sql = "SELECT * FROM ksiazki";
+    $sql = "SELECT id_autor_tytul, name, tytul FROM lib_autor, lib_autor_tytul, lib_tytul WHERE lib_autor_tytul.id_autor=lib_autor.id_autor AND lib_autor_tytul.id_tytul=lib_tytul.id_tytul";
     $result = $conn -> query($sql);
 
     echo("<table class='tab'>");
@@ -89,7 +89,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <?php
 
 
-    $sql = "SELECT * from wypozyczenia";
+    $sql = "SELECT lib_wyp.id, lib_autor.name, tytul, lib_user.login, date_wyp, date_odd FROM lib_wyp, lib_tytul, lib_autor_tytul, lib_autor, lib_user WHERE lib_wyp.id_user = lib_user.id AND lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id_autor=lib_autor_tytul.id_autor AND lib_wyp.id=lib_autor_tytul.id_autor_tytul";
     $result = $conn -> query($sql);
 
     echo("<table class='tab'>");
