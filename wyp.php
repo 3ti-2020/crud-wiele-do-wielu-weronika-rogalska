@@ -11,6 +11,6 @@ echo($sql);
 
 mysqli_query($conn, $sql);
 
-// header('Location: index2.php');
+header('Location: index2.php');
 
 ?>
