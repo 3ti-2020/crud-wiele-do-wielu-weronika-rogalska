@@ -34,7 +34,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <?php
     require_once('connect.php');
 
-    $sql = "SELECT * FROM ksiazki";
+    $sql = "SELECT lib_autor_tytul.id_autor_tytul, tytul, name FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_autor.id_autor=lib_autor_tytul.id_autor AND lib_tytul.id_tytul=lib_autor_tytul.id_tytul";
     $result = $conn -> query($sql);
 
     echo("<table class='tab'>");
@@ -76,9 +76,9 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
         <p>Użytkownik:</p> 
         <?php
             $result = $conn->query("SELECT id, login FROM lib_user");
-            echo("<select name='login'>");
+            echo("<select name='login_in'>");
             while($row = $result -> fetch_assoc()){
-                echo("<option value=".$row['id']." name='login'>".$row['login']."</option>");
+                echo("<option value=".$row['id']." name='login_in'>".$row['login']."</option>");
             }
             echo("</select>");
             ?>
@@ -89,7 +89,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <?php
 
 
-    $sql = "SELECT * FROM wypozyczenia";
+    $sql = "SELECT lib_wyp.id, login, tytul, date_wyp, date_odd FROM lib_wyp, lib_user, lib_tytul, lib_autor_tytul, lib_autor WHERE lib_autor_tytul.id_autor=lib_autor.id_autor AND lib_autor_tytul.id_tytul=lib_tytul.id_tytul AND lib_wyp.id_user=lib_user.id AND lib_wyp.id_tytul=lib_autor_tytul.id_tytul";
     $result = $conn -> query($sql);
 
     echo("<table class='tab'>");
