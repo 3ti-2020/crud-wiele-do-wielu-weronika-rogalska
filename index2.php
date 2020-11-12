@@ -89,7 +89,7 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <?php
 
 
-    $sql = "SELECT * FROM wypozyczenia";
+    $sql = "SELECT login, tytul, date_wyp, date_odd FROM wypozyczenia";
     $result = $conn -> query($sql);
 
     echo("<table class='tab'>");
