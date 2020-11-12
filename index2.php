@@ -66,10 +66,10 @@ if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] = 1){
     <form action="wyp.php" method="POST">
         <p>Książka:</p>
         <?php
-            $result = $conn -> query("SELECT id_tytul, tytul FROM lib_tytul");
+            $result = $conn -> query("SELECT id_autor_tytul, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id_autor=lib_autor_tytul.id_autor");
             echo("<select name='tytul'>");
             while($row = $result->fetch_assoc()){
-                echo("<option name='tytul' value=".$row['id_tytul'].">".$row['tytul']."</option>");
+                echo("<option name='tytul' value=".$row['lib_tytul.id_tytul'].">".$row['tytul']."</option>");
             }
             echo("</select>");
         ?>
