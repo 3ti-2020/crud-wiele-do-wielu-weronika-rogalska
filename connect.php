@@ -1,7 +1,7 @@
 <?php
 $servername = 'remotemysql.com';
 $username = 'HCQrQTLU5R';
-$password = 'fcxkUx4zSU';
+$password = 'LwUB5PqRHW';
 $dbname = 'HCQrQTLU5R';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
