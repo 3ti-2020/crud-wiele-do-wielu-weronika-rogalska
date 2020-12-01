@@ -1,0 +1,13 @@
+.header{
+    background-color: #bbbfca;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    background-color: #e8e8e8;
+    padding: 2rem;
+    height: 77vh;
+}
