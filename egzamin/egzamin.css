@@ -4,6 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .main{
@@ -12,6 +14,13 @@
     height: 77vh;
 }
 
-ul{
-    line-height: 0.6cm;
+.back{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(70, 70, 70);
 }
