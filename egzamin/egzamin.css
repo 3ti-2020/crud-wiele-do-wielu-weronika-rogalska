@@ -1,17 +1,18 @@
 .header{
-    background-color: #bbbfca;
+    background-color: #232323;
     padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    color: #bbbfca;
 }
 
 .main{
-    background-color: #e8e8e8;
+    background-color: #232323;
     padding: 2rem;
-    height: 77vh;
+    height: auto;
 }
 
 .back{
@@ -22,5 +23,13 @@
 
 a{
     text-decoration: none;
-    color: rgb(70, 70, 70);
+    color: #bbbfca;
+}
+
+.question{
+    background-color: #bbbfca;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 13px;
+    box-shadow: 10px 10px 8px #5e5b5b;
 }
