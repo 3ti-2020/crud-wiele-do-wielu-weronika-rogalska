@@ -16,27 +16,20 @@
         <?php
         require_once('../connect.php');
 
-        echo("<div class='container'>");
+        $result = $conn->query("SELECT Distinct tytul, tresc, id_post FROM posty"); 
 
-        $sql = "SELECT tytul, tresc, tagi FROM posty_tagi, posty, tagi WHERE posty_tagi.id_posty=posty.id_post AND posty_tagi.id_tagi=tagi.id_tagi";
-        $sql2 = "SELECT tagi FROM posty_tagi, posty, tagi WHERE posty_tagi.id_posty = posty.id_post AND posty_tagi.id_tagi=tagi.id_tagi ";
-        $result = $conn -> query($sql);
-        $result2 = $conn -> query($sql2);
-
-            echo("<table class='tab'>");
-            while($row = $result -> fetch_assoc()){
-                echo("<td class='tytul'><h2>".$row['tytul']."</h2></tr>");
-                echo("<td class='tresc'>".$row['tresc']."</tr>");
-                while($row = $result2 -> fetch_assoc()){
-                    echo("<td class='tagi'>".$row['tagi']."</td>");
+        while($row = $result -> fetch_assoc()){
+            echo("<div class='container'>");
+                echo("<div class='tytul'><h2>".$row['tytul']."</h2></div>");
+                echo("<div class='tresc'>".$row['tresc']."</div>");
+                $id = $row['id_post'];
+                $sql2 = "SELECT tagi FROM posty_tagi, posty, tagi WHERE posty_tagi.id_posty = posty.id_post AND posty_tagi.id_tagi=tagi.id_tagi AND posty_tagi.id_posty = $id";
+                $result2 = $conn -> query($sql2);
+                while($row2 = $result2 -> fetch_assoc()){
+                    echo("<tr class='tagi'>".$row2['tagi']."</tr>,");
                 }
-
-                // echo("<td>".$row['tytul']."</td>");
-                // echo("<td>".$row['tresc']."</td>");
-                // echo("</tr>");
-            }
-            echo("</table>");
-        echo("</div>");
+            echo("</div>");
+        }
 
         ?>
     </main>
