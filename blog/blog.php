@@ -12,7 +12,6 @@
         <div class='github'><a class='github' href="https://github.com/3ti-2020/crud-wiele-do-wielu-weronika-rogalska">POWRÓT DO GITHUB<img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/142_Github_logo_logos-512.png" height='30px' width='30px'></a></div>
         <div class='blog'><h1>BLOG</h1></div>
         <div class='back'><b><a href="../index.php">POWRÓT</a></b></div>
-        <div class='dodaj_post'><a href="#">Dodaj nowy post</a></div>
     </header>
     <main class="main">
         <?php
@@ -35,37 +34,5 @@
 
         ?>
     </main>
-    <div class="post_container">
-        <div class="post_content">
-
-            <div class="post_close"><b>+</b></div>
-
-            <div><h1>Nowy post</h1></div>
-
-            <div class="input_book">
-            <form action='insert_post.php' method='POST'>
-                <input class='in_post' type='text' name='tytul' placeholder='Tytuł'>
-                <?php
-                $sql3 = "SELECT * FROM tagi";
-                $result3 = $conn -> query($sql3);
-                
-                echo("<select name='tagi'>");
-                while($row3 = $result3 -> fetch_assoc()){
-                    echo("<option name='tagi' value=".$row3['id_tagi']." >".$row3['tagi']."</option>");
-                }
-                echo("</select>");
-                ?>
-                <!-- <input class='in_post' type='text' name='tresc' placeholder='Treść'> -->
-                <br><input class='btn' type='submit' value='Dodaj'>
-            </form>
-            <div><h2>Dodaj tag</h2></div>
-            <form action="insert_tag.php" method='POST'>
-                <input class='in_post' type="text" name='tagi' placeholder='Tag'>
-                <input class='btn' type='submit' value='Dodaj'>
-            </form>
-            </div>
-        </div>
-    </div>
-<script src="blog.js"></script>
 </body>
 </html>
