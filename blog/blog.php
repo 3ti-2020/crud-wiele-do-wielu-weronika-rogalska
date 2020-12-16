@@ -20,7 +20,7 @@
         if(isset($_GET['tag'])){ 
             $zmienna = $_GET['tag'];
             $result = $conn->query("SELECT Distinct tytul, tresc, posty.id_post, czas FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id_post AND posty_tagi.id_tagi = tagi.id_tagi AND tagi = '$zmienna'"); 
-            echo("<div><a href='blog.php'>Wszystkie posty</a></div>");
+            echo("<div style='text-align: center; width: 100%'><a href='blog.php'>Wszystkie posty</a></div>");
         }else{
             $result = $conn->query("SELECT Distinct tytul, tresc, id_post, czas FROM posty");  
         } 
