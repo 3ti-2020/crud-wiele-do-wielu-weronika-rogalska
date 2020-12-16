@@ -65,6 +65,11 @@ body{
     justify-content: center;
 }
 
+.czas{
+    width: 100%;
+    text-align: end;
+}
+
 .tytul{
     text-align: center;
     width: 100%;

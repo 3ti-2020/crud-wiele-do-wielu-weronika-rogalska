@@ -17,10 +17,11 @@
         <?php
         require_once('../connect.php');
 
-        $result = $conn->query("SELECT Distinct tytul, tresc, id_post FROM posty"); 
+        $result = $conn->query("SELECT Distinct tytul, tresc, id_post, czas FROM posty"); 
 
         while($row = $result -> fetch_assoc()){
             echo("<div class='container'>");
+                echo("<div class='czas'>".$row['czas']."</div>");
                 echo("<div class='tytul'><h2>".$row['tytul']."</h2></div>");
                 echo("<div class='tresc'>".$row['tresc']."</div>");
                 $id = $row['id_post'];
