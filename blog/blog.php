@@ -43,10 +43,25 @@
             <div><h1>Nowy post</h1></div>
 
             <div class="input_book">
-            <form action='insert.php' method='POST'>
-                <input class='in_post' type='text' name='name' placeholder='Tytuł'>
-                <input class='in_post' type='text' name='tytul' placeholder='tytuł'>
-                <br><input class='btn' type='submit' value='DODAJ'>
+            <form action='insert_post.php' method='POST'>
+                <input class='in_post' type='text' name='tytul' placeholder='Tytuł'>
+                <?php
+                $sql3 = "SELECT * FROM tagi";
+                $result3 = $conn -> query($sql3);
+                
+                echo("<select name='tagi'>");
+                while($row3 = $result3 -> fetch_assoc()){
+                    echo("<option name='tagi' value=".$row3['id_tagi']." >".$row3['tagi']."</option>");
+                }
+                echo("</select>");
+                ?>
+                <!-- <input class='in_post' type='text' name='tresc' placeholder='Treść'> -->
+                <br><input class='btn' type='submit' value='Dodaj'>
+            </form>
+            <div><h2>Dodaj tag</h2></div>
+            <form action="insert_tag.php" method='POST'>
+                <input class='in_post' type="text" name='tagi' placeholder='Tag'>
+                <input class='btn' type='submit' value='Dodaj'>
             </form>
             </div>
         </div>
