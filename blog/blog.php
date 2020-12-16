@@ -17,7 +17,12 @@
         <?php
         require_once('../connect.php');
 
-        $result = $conn->query("SELECT Distinct tytul, tresc, id_post, czas FROM posty"); 
+        if(isset($_GET['tag'])){ 
+            $zmienna = $_GET['tag'];
+            $result = $conn->query("SELECT Distinct tytul, tresc, posty.id_post, czas FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id_post AND posty_tagi.id_tagi = tagi.id_tagi AND tagi = '$zmienna'"); 
+        }else{
+            $result = $conn->query("SELECT Distinct tytul, tresc, id_post, czas FROM posty");  
+        } 
 
         while($row = $result -> fetch_assoc()){
             echo("<div class='container'>");
@@ -28,7 +33,7 @@
                 $sql2 = "SELECT tagi FROM posty_tagi, posty, tagi WHERE posty_tagi.id_posty = posty.id_post AND posty_tagi.id_tagi=tagi.id_tagi AND posty_tagi.id_posty = $id";
                 $result2 = $conn -> query($sql2);
                 while($row2 = $result2 -> fetch_assoc()){
-                    echo("<tr class='tagi'>".$row2['tagi']."</tr>,");
+                    echo("<tr class='tagi'><a href='?tag=".$row2['tagi']."'>".$row2['tagi']."</a></tr>,");
                 }
             echo("</div>");
         }
