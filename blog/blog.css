@@ -92,3 +92,39 @@ a{
     text-decoration: none;
     color: #bbbfca;
 }
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: transparent;
+}
+
+
+
+.post_container{
+    background-color: rgb(35, 35, 35, 0.7);
+    height: 100vh;
+    width: 210vh;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.post_content{
+    background-color: rgb(20, 20, 20);
+    height: 60vh;
+    width: 90vh;
+    color: #bbbfca;
+}
+
+.post_close{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 35px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
