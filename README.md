@@ -2,3 +2,5 @@
 
 
 https://weronika-rogalska-wdw.herokuapp.com/
+
+BLOG: https://weronika-rogalska-wdw.herokuapp.com/blog/blog.php
